@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-editorial: var(--font-cormorant), "Cormorant Garamond", Garamond, Georgia, serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Garamond, Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-imperial: #15261d;
+    --gold-champagne: #d4af37;
+    --gold-light: #e6c786;
+    --gold-deep: #aa8239;
+    --text-alabaster: #f7f4eb;
+    --text-sage: #b8c2b9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #101c15;
+    color: #f7f4eb;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: transparent;
+    color: #f7f4eb;
+  }
+
+  ::selection {
+    background-color: rgba(212, 175, 55, 0.35);
+    color: #f7f4eb;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d1712;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.6);
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(15, 28, 21, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.glass-panel-elevated {
+  background: rgba(18, 33, 25, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.55);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f7f4eb 0%, #e6c786 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 25px -4px rgba(212, 175, 55, 0.25);
+}
+
+/* Luxury Serif Typography */
+.font-editorial {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: 0.04em;
+}
+
+.font-editorial-spaced {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: 0.12em;
+}
+
+/* Animations for ambient aura */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 8s ease-in-out infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 6s ease-in-out infinite;
+}
