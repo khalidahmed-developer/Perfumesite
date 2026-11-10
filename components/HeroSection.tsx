@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import Link from 'next/link';
-import { Volume2, VolumeX, ArrowDown, Sparkles } from 'lucide-react';
+import { Volume2, VolumeX, ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -47,12 +46,12 @@ export default function HeroSection() {
         <source src="/assets/HeroSectionVideo.mp4" type="video/mp4" />
       </video>
 
-      {/* Cinematic Contrast Gradient Overlays with Smooth Dissolve */}
+      {/* Subtle Ambient Contrast Overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-transparent pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30 pointer-events-none"
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(16,28,21,0.65)_100%)] pointer-events-none"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(16,28,21,0.5)_100%)] pointer-events-none"
         style={{
           maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
           WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
@@ -74,46 +73,16 @@ export default function HeroSection() {
         )}
       </button>
 
-      {/* Centered Luxury Editorial Hero Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 pt-16">
-        {/* Pre-title in spaced gold caps */}
-        <div className="text-[11px] sm:text-xs tracking-[0.34em] uppercase text-[#D4AF37] font-medium mb-4">
-          LA MAISON DES SAISONS — PARIS
-        </div>
-
-        {/* Main Headline */}
-        <h1 className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-[#F7F4EB] tracking-[0.03em] max-w-4xl text-balance leading-[1.05] mb-5 sm:mb-6">
-          Four Seasons. <br className="hidden sm:inline" />
-          <span className="italic font-light text-[#E6C786]">Four Eternal Essences.</span>
-        </h1>
-
-        {/* Subheadline */}
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B8C2B9] max-w-2xl font-light tracking-wide leading-relaxed mb-8 sm:mb-10 text-balance">
-          An olfactory journey through nature’s most fleeting masterpieces, bottled in crystal and
-          gold in the historic heart of Paris.
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-          {/* Primary CTA */}
-          <Link
-            href="/catalog"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-[#15261d]/90 hover:bg-[#1c3829] border border-[#D4AF37] text-xs sm:text-sm uppercase tracking-[0.2em] font-medium text-[#F7F4EB] hover:text-[#E6C786] backdrop-blur-md transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)] whitespace-nowrap"
-          >
-            Explore Perfume Catalog
-          </Link>
-
-          {/* Secondary CTA: Begin Journey */}
-          <button
-            onClick={scrollToChapterOne}
-            type="button"
-            className="w-full sm:w-auto px-7 py-3.5 rounded-sm border border-[#D4AF37]/40 hover:border-[#D4AF37] bg-black/30 hover:bg-black/50 text-xs sm:text-sm uppercase tracking-[0.18em] text-[#B8C2B9] hover:text-[#F7F4EB] backdrop-blur-sm transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap"
-          >
-            <span>Begin the Journey</span>
-            <ArrowDown className="w-3.5 h-3.5 text-[#D4AF37] animate-bounce" />
-          </button>
-        </div>
-      </div>
+      {/* Discreet bottom scroll indicator (icon only, unobstructed visual) */}
+      <button
+        onClick={scrollToChapterOne}
+        type="button"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 p-2.5 rounded-full bg-[#15261d]/60 hover:bg-[#1f3b2c] border border-[#D4AF37]/30 hover:border-[#D4AF37] text-[#D4AF37] hover:text-[#E6C786] backdrop-blur-sm transition-all shadow-lg group focus:outline-none focus-visible:ring-1 focus-visible:ring-[#D4AF37]"
+        title="Scroll down to explore"
+        aria-label="Scroll down to begin the journey"
+      >
+        <ArrowDown className="w-4 h-4 animate-bounce" />
+      </button>
     </section>
   );
 }

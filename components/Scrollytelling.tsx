@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ShoppingBag, Layers, Check } from 'lucide-react';
+import { ArrowRight, ShoppingBag, Check } from 'lucide-react';
 import { PERFUMES, Perfume } from '@/lib/perfumes';
 import { useCart } from '@/lib/cart-context';
 import SeasonalParticles from './SeasonalParticles';
@@ -137,43 +137,6 @@ export default function Scrollytelling() {
                     <p className="text-xs sm:text-sm text-[#B8C2B9] font-light leading-relaxed mb-6">
                       {perfume.description}
                     </p>
-
-                    {/* Olfactory Pyramid Display Box */}
-                    <div className="p-4 rounded-sm bg-[#0e1b14]/75 border border-[#D4AF37]/25 mb-6 space-y-2.5">
-                      <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[#D4AF37]">
-                        <Layers className="w-3 h-3 text-[#D4AF37]" />
-                        <span>Olfactory Architecture</span>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 text-xs">
-                        <div>
-                          <div className="text-[10px] text-[#B8C2B9]/70 uppercase tracking-wider mb-0.5">
-                            Top Notes
-                          </div>
-                          <div className="text-[#F7F4EB] font-medium leading-snug">
-                            {perfume.pyramid.top.join(', ')}
-                          </div>
-                        </div>
-
-                        <div>
-                          <div className="text-[10px] text-[#B8C2B9]/70 uppercase tracking-wider mb-0.5">
-                            Heart Notes
-                          </div>
-                          <div className="text-[#F7F4EB] font-medium leading-snug">
-                            {perfume.pyramid.heart.join(', ')}
-                          </div>
-                        </div>
-
-                        <div>
-                          <div className="text-[10px] text-[#B8C2B9]/70 uppercase tracking-wider mb-0.5">
-                            Base Notes
-                          </div>
-                          <div className="text-[#F7F4EB] font-medium leading-snug">
-                            {perfume.pyramid.base.join(', ')}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
 
                     {/* Size Selector & Price */}
                     <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#D4AF37]/15 pt-5 mb-6">
