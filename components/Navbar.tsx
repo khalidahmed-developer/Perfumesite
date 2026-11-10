@@ -4,14 +4,14 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Volume2, VolumeX, ShoppingBag, Menu, X, ChevronDown, Sparkles } from 'lucide-react';
+import { ShoppingBag, Menu, X, ChevronDown } from 'lucide-react';
 import { useCart } from '@/lib/cart-context';
 import { PERFUMES } from '@/lib/perfumes';
 
 export default function Navbar() {
   const pathname = usePathname();
   const currentPath = pathname || '';
-  const { totalItems, setIsCartOpen, isSoundActive, toggleSound } = useCart();
+  const { totalItems, setIsCartOpen } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCatalogMenuOpen, setIsCatalogMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -156,31 +156,6 @@ export default function Navbar() {
 
           {/* Zone 3: Utility Actions */}
           <div className="flex items-center gap-4 shrink-0">
-            {/* Ambient Soundscape Toggle */}
-            <button
-              onClick={toggleSound}
-              type="button"
-              className="group flex items-center gap-2 px-2.5 py-1.5 rounded border border-[#D4AF37]/25 hover:border-[#D4AF37] bg-[#101c15]/50 transition-colors text-xs text-[#B8C2B9] hover:text-[#F7F4EB]"
-              title={isSoundActive ? 'Mute ambient soundscape' : 'Play ambient luxury soundscape'}
-              aria-label="Toggle ambient luxury sound"
-            >
-              {isSoundActive ? (
-                <>
-                  <Volume2 className="w-3.5 h-3.5 text-[#E6C786] animate-pulse" />
-                  <span className="hidden lg:inline text-[10px] tracking-wider uppercase text-[#E6C786]">
-                    Sound On
-                  </span>
-                </>
-              ) : (
-                <>
-                  <VolumeX className="w-3.5 h-3.5 text-[#B8C2B9] group-hover:text-[#F7F4EB]" />
-                  <span className="hidden lg:inline text-[10px] tracking-wider uppercase">
-                    Ambient
-                  </span>
-                </>
-              )}
-            </button>
-
             {/* Shopping Bag Trigger */}
             <button
               onClick={() => setIsCartOpen(true)}
@@ -245,15 +220,6 @@ export default function Navbar() {
               <span>Haute Parfumerie Paris</span>
               <span className="text-[#D4AF37]">Place Vendôme</span>
             </div>
-            <button
-              onClick={() => {
-                toggleSound();
-                setIsMobileMenuOpen(false);
-              }}
-              className="w-full py-2.5 px-4 rounded border border-[#D4AF37]/30 text-center text-[#E6C786] text-xs uppercase tracking-widest"
-            >
-              {isSoundActive ? 'Mute Ambient Audio' : 'Enable Ambient Sound'}
-            </button>
           </div>
         </div>
       )}
