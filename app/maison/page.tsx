@@ -1,9 +1,14 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, MapPin, Feather, Compass, ShieldCheck } from 'lucide-react';
+import type { Metadata } from 'next';
+import { ArrowRight, Sparkles, MapPin, Feather } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Héritage & Savoir-Faire | Quatréa Paris',
+  description:
+    'Since 1892, our Parisian atelier captures the cyclical poetry of nature from 28 Place Vendôme to our Grasse sanctuaries.',
+};
 
 export default function MaisonPage() {
   return (

@@ -1,10 +1,14 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ChevronLeft } from 'lucide-react';
 import DiscoverySetSection from '@/components/DiscoverySetSection';
-import { PERFUMES } from '@/lib/perfumes';
+
+export const metadata: Metadata = {
+  title: 'Coffret Découverte | Quatréa Paris',
+  description:
+    'Curate your personal 4-vial luxury seasonal discovery set with custom gold monogramming.',
+};
 
 export default function DiscoverySetPage() {
   return (

@@ -24,7 +24,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full min-h-screen h-screen flex items-center justify-center overflow-hidden">
-      {/* Full Screen Cinematic Hero Video */}
+      {/* Full Screen Cinematic Hero Video with Smooth Feathered Bottom */}
       <video
         ref={videoRef}
         src="/assets/aistudio/HeroSectionVideo_8a535c19.mp4"
@@ -38,14 +38,26 @@ export default function HeroSection() {
           e.currentTarget.play().catch(() => {});
         }}
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        style={{
+          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+        }}
       >
         <source src="/assets/aistudio/HeroSectionVideo_8a535c19.mp4" type="video/mp4" />
         <source src="/assets/HeroSectionVideo.mp4" type="video/mp4" />
       </video>
 
-      {/* Cinematic Contrast Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#101c15] via-[#101c15]/35 to-black/40 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(16,28,21,0.75)_100%)] pointer-events-none" />
+      {/* Cinematic Contrast Gradient Overlays with Smooth Dissolve */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-transparent pointer-events-none"
+      />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(16,28,21,0.65)_100%)] pointer-events-none"
+        style={{
+          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
+        }}
+      />
 
       {/* Hero Video Audio Toggle Button */}
       <button

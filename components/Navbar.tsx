@@ -10,6 +10,7 @@ import { PERFUMES } from '@/lib/perfumes';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const currentPath = pathname || '';
   const { totalItems, setIsCartOpen, isSoundActive, toggleSound } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCatalogMenuOpen, setIsCatalogMenuOpen] = useState(false);
@@ -63,7 +64,7 @@ export default function Navbar() {
               }`}
             >
               La Maison
-              {pathname === '/' && (
+              {currentPath === '/' && (
                 <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#D4AF37]" />
               )}
             </Link>
@@ -77,7 +78,7 @@ export default function Navbar() {
               <Link
                 href="/catalog"
                 className={`flex items-center gap-1 hover:text-[#F7F4EB] transition-colors whitespace-nowrap ${
-                  pathname.startsWith('/catalog') || pathname.startsWith('/perfume')
+                  currentPath.startsWith('/catalog') || currentPath.startsWith('/perfume')
                     ? 'text-[#E6C786] font-semibold'
                     : ''
                 }`}
@@ -131,11 +132,11 @@ export default function Navbar() {
             <Link
               href="/maison"
               className={`hover:text-[#F7F4EB] transition-colors relative py-1 whitespace-nowrap ${
-                pathname === '/maison' ? 'text-[#E6C786] font-semibold' : ''
+                currentPath === '/maison' ? 'text-[#E6C786] font-semibold' : ''
               }`}
             >
               L’Art des Saisons
-              {pathname === '/maison' && (
+              {currentPath === '/maison' && (
                 <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#D4AF37]" />
               )}
             </Link>
@@ -143,11 +144,11 @@ export default function Navbar() {
             <Link
               href="/discovery-set"
               className={`hover:text-[#F7F4EB] transition-colors relative py-1 whitespace-nowrap ${
-                pathname === '/discovery-set' ? 'text-[#E6C786] font-semibold' : ''
+                currentPath === '/discovery-set' ? 'text-[#E6C786] font-semibold' : ''
               }`}
             >
               Discovery Set
-              {pathname === '/discovery-set' && (
+              {currentPath === '/discovery-set' && (
                 <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#D4AF37]" />
               )}
             </Link>

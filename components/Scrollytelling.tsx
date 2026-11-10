@@ -40,8 +40,17 @@ export default function Scrollytelling() {
 
   return (
     <div className="relative w-full">
-      {/* Seasonal Sections (Chapters 01,02,03,04 removed) */}
-      <div className="space-y-28 sm:space-y-36 py-16">
+      {/* Editorial Transition Bridge from Hero to Scrollytelling */}
+      <div className="relative pt-12 pb-2 text-center max-w-xl mx-auto px-4">
+        <div className="inline-flex items-center gap-3 text-[10px] sm:text-xs uppercase tracking-[0.32em] text-[#D4AF37] font-mono">
+          <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]/50" />
+          <span>Le Cycle des Saisons</span>
+          <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]/50" />
+        </div>
+      </div>
+
+      {/* Seasonal Sections */}
+      <div className="space-y-28 sm:space-y-36 py-12 sm:py-16">
         {PERFUMES.map((perfume, index) => {
           const selectedSize = selectedSizes[perfume.id] || '100ml';
           const currentPrice = selectedSize === '100ml' ? perfume.price100ml : perfume.price50ml;

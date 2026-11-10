@@ -25,6 +25,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://quatrea-paris.com'),
   title: 'Quatréa — La Maison des Saisons (Paris)',
   description:
     'Ultra-luxury Parisian haute-parfumerie house showcasing four signature Eau de Parfums capturing the sensory essence of the four seasons: Printemps, Été, Automne, and Hiver.',
